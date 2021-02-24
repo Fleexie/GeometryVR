@@ -5,17 +5,20 @@ import {
   Text,
   View,
 } from 'react-360';
+import Spaceship from "./src/components/spaceship";
+import UFO from "./src/components/ufo";
+import Satelite from "./src/components/satelite";
 
 export default class GeometryVR extends React.Component {
   render() {
     return (
-      <View style={styles.panel}>
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Welcome to React 360
-          </Text>
+        <View style={styles.panel}>
+          <View style={styles.greetingBox}>
+            <Text style={styles.greeting}>
+              GeometryVR
+            </Text>
+          </View>
         </View>
-      </View>
     );
   }
 };
