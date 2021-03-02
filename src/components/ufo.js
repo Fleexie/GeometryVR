@@ -4,7 +4,8 @@ import {
     View,
     Cylinder,
     Sphere,
-    Box
+    Box,
+    asset
 } from 'react-360';
 
 
@@ -27,9 +28,9 @@ export default class UFO extends React.Component {
         return (
             <View style={{ transform: [{rotateY: this.state.rotation}]}}>
                 <View style={{ transform: [{translate: [22,0,0]}, {rotateY: this.state.rotation}, {rotateZ: 20}]}}>
-                    <Sphere radius={1} widthSegments={12} heightSegments={12}  style={{ color: 'black', transform: [{ translate: [0,0,0] }] }}/>
+                    <Sphere radius={1} widthSegments={12} heightSegments={12} texture={asset('../../static_assets/spacecraft.jpg')} style={{ transform: [{ translate: [0,0,0] }, {rotateX: this.state.rotation}] }}/>
                     <View style={{ transform: [{translate: [0,0,0]}, {rotateY: this.state.rotation}]}}>
-                        <Cylinder radiusTop={2} radiusBottom={2} dimHeight={0.3} segments={24} style={{ color:'darkgrey', transform: [{translate: [0,0,0]}]}}/>
+                        <Cylinder radiusTop={2} radiusBottom={2} dimHeight={0.3} segments={24} style={{ color:'black', transform: [{translate: [0,0,0]}]}}/>
                         <View>
                             <Sphere radius={0.1} widthSegments={12} heightSegments={12}  style={{ color: this.state.red, transform: [{ translate: [2,0,0] }] }}/>
                             <Sphere radius={0.1} widthSegments={12} heightSegments={12}  style={{ color: this.state.red, transform: [{ translate: [-2,0,0] }] }}/>
@@ -51,7 +52,7 @@ export default class UFO extends React.Component {
     componentDidMount() {
         this.rotation = setInterval(() => {
             this.setState({rotation: this.state.rotation + 0.2});
-        }, 10);
+        }, 20);
 
         this.color = setInterval(() => {
             this.state.color = !this.state.color;
