@@ -13,11 +13,7 @@ export default class GeometryVR extends React.Component {
   render() {
     return (
         <View style={styles.panel}>
-          <View style={styles.greetingBox}>
-            <Text style={styles.greeting}>
-              GeometryVR
-            </Text>
-          </View>
+
         </View>
     );
   }

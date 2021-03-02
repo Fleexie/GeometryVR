@@ -10,9 +10,9 @@ function init(bundle, parent, options = {}) {
     ...options,
   });
 
-  const SpaceshipLocation = new Location([-10,2,-10])
-  const SateliteLocation = new Location([2,-1,-20])
-  const UFOLocation = new Location([-3,1,-20])
+  const SpaceshipLocation = new Location([-10,2,-10]);
+  const SateliteLocation = new Location([22,-1,-20]);
+  const UFOLocation = new Location([0,0,-10]);
 
   r360.renderToLocation(
       r360.createRoot('Spaceship', { /* initial props */ }),
