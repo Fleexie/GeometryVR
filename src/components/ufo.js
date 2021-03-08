@@ -15,7 +15,7 @@ export default class UFO extends React.Component {
     constructor(props) {
         super(props);
 
-        let axisRotate = 10;
+        let axisRotate = 1;
         this.state = {
             rotation: axisRotate,
             diodeColor: true,
@@ -30,7 +30,7 @@ export default class UFO extends React.Component {
             // Rotates the whole element.
             <View style={{ transform: [{rotateY: this.state.rotation}]}}>
                 {/* First Placeholder - Moved away from center to rotate with Main & To rotate around its self - Center Graphics */}
-                <View style={{ transform: [{translate: [44,0,0]}, {rotateY: this.state.rotation}, {rotateZ: 20}]}}>
+                <View style={{ transform: [{translate: [52,0,0]}, {rotateY: this.state.rotation}, {rotateZ: 20}]}}>
                     <Sphere
                         radius={1}
                         widthSegments={12}
@@ -69,20 +69,19 @@ export default class UFO extends React.Component {
     }
     rotationController(){
         this.rotation = setInterval(() => {
-            this.setState({rotation: this.state.rotation + 0.2});
+            this.setState({rotation: this.state.rotation + 0.3});
         }, 20);
     }
     diodeController(){
         this.diodeColor = setInterval(() => {
             this.state.diodeColor = !this.state.diodeColor;
 
-            if (this.state.diodeColor !== false){
+            if (this.state.diodeColor){
                 this.setState({green: 'lightgreen', red: 'darkred'});
             }
             else{
                 this.setState({ green: 'green', red: 'red'})
             }
-            this.setState({colorGreen: !this.state.colorGreen});
         }, 500)
     }
 };

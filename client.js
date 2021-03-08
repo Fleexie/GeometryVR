@@ -18,10 +18,7 @@ function init(bundle, parent, options = {}) {
       r360.createRoot('Spaceship', { /* initial props */ }),
       SpaceshipLocation
   );
-  r360.renderToLocation(
-    r360.createRoot('Satelite', { /* initial props */ }),
-    SateliteLocation
-  );
+
   r360.renderToLocation(
     r360.createRoot('UFO', { /* initial props */ }),
     UFOLocation
