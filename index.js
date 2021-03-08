@@ -8,6 +8,7 @@ import {
 import Spaceship from "./src/components/spaceship";
 import UFO from "./src/components/ufo";
 import Satelite from "./src/components/satelite";
+import SuperSatelite from "./src/components/superSatelite";
 
 export default class GeometryVR extends React.Component {
   render() {

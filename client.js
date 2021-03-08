@@ -12,15 +12,22 @@ function init(bundle, parent, options = {}) {
 
   const SpaceshipLocation = new Location([-10,2,-10]);
   const SateliteLocation = new Location([22,-1,-20]);
-  const UFOLocation = new Location([0,0,-10]);
+  const UFOLocation = new Location([0,0,-2]);
+  const SuperSateliteLocation = new Location([0, 0, -1])
 
   r360.renderToLocation(
       r360.createRoot('Spaceship', { /* initial props */ }),
       SpaceshipLocation
   );
   r360.renderToLocation(
-    r360.createRoot('Satelite', { /* initial props */ }),
+    r360.createRoot('Satelite', {
+      /* initial props */ }),
     SateliteLocation
+  );
+  r360.renderToLocation(
+    r360.createRoot('SuperSatelite', {
+      /* initial props */ }),
+    SuperSateliteLocation
   );
   r360.renderToLocation(
     r360.createRoot('UFO', { /* initial props */ }),
