@@ -13,17 +13,65 @@ import {
 import GeometryVR from "../../index";
 import Entity from 'Entity';
 import SolarPanel from './solarPanel'
+import Reciever from './reciever'
 import SuperSateliteBody from './superSateliteBody';
 class SuperSatelite extends React.Component {
+  constructor(props) {
+    super(props);
+
+    let axisRotate = 10;
+    this.state = {
+      rotation: axisRotate,
+      color: true,
+      green: 'green',
+      red: 'red'
+    }
+  }
+  componentDidMount() {
+    this.rotation = setInterval(() => {
+      this.setState({
+        rotation: this.state.rotation + 0.2
+      });
+    }, 20);
+  }
   render() {
     return (
-      <View >
+      < View style = {
+        {
+          transform: [{
+            rotateY: this.state.rotation
+          }]
+        }
+      } >
         <View>
-          <SolarPanel shiftX={0.5}/>
-          < SolarPanel shiftX = {
-            0
+          < Reciever style = {
+            {
+              transform: [{
+                translateY: -0.1
+              }, {
+                rotateX: 180
+              }]
+            }
           }
           />
+          <Reciever style = {
+            {
+              transform: [{
+                    translateY: 0
+                  }, {
+                    translateZ: -0.04
+                  }, {
+                    translateX: 0.22
+                  }, {
+                    rotateX: -90
+                  }, {
+                    scale: 0.5
+                  }]
+            }
+          }
+          />
+          <SolarPanel shiftX={0.5}/>
+          <SolarPanel shiftX={0}/>
           <SuperSateliteBody />
 
           </View>

@@ -24,8 +24,8 @@ export default class SuperSateliteBody extends React.Component {
     render() {
         return (
             <View>
-                <View style>
-                    < Cylinder radiusTop = {
+                <View>
+                    <Cylinder radiusTop = {
                         .05
                     }
                     radiusBottom = {
@@ -36,14 +36,14 @@ export default class SuperSateliteBody extends React.Component {
                     }
                     style = {
                         {
-                            color: 'white',
+                            color: 'gainsboro',
                             transform: [{
                                 translate: [0.45, 0, 0]
                             }]
                         }
                     }
                     />
-                     < Cylinder radiusTop = {
+                     <Cylinder radiusTop = {
                          .03
                      }
                      radiusBottom = {
@@ -63,30 +63,8 @@ export default class SuperSateliteBody extends React.Component {
                              }]
                          }
                      }
-
                     />
-                    < Cylinder radiusTop = {
-                        .075
-                    }
-                    radiusBottom = {
-                        .03
-                    }
-                    dimHeight = {
-                        0.05
-                    }
-                    segments = {
-                        12
-                    }
-                    style = {
-                        {
-                            color: 'white',
-                            transform: [{
-                                translate: [0.45, 0.1, 0]
-                            }]
-                        }
-                    }
-
-                    />
+                   
                 </View>
             </View>
         );

@@ -43,7 +43,6 @@ export default class SolarPanel extends React.Component {
         }
       }
     })
-    console.log(solarPanelJsx)
     return (
       <View>
         
@@ -71,7 +70,6 @@ const getSolarPanelProps = (
   columnIndex,
   panelType,
   shiftX) => {
-  console.log(panelType)
 
   switch (panelType) {
     case SolarPanelType.BASE:
@@ -81,22 +79,16 @@ const getSolarPanelProps = (
     case SolarPanelType.TALL:
       size = tallSize;
       currentTranslateY = (tallSize.height * 100) / (tallSize.width * 100)
-      console.log(currentTranslateY)
       currentTranslateY = tallSize.height * 100 / currentTranslateY / 2
       currentTranslateY /= 100;
-      console.log(currentTranslateY)
       currentTranslateY += columnIndex * baseMargin + columnIndex*tallSize.height
  
-      console.log(currentTranslateY,'basemargin')
-      console.log(currentTranslateY)                                                      
       currentTranslateY = currentTranslateY - tallSize.height/2
 
       break;
     default:
       throw new Error('panel type not found')
   }
-  console.log(currentTranslateY)
-  console.log(size)
   return ({
     dimDepth: 0,
     dimWidth: size.width,
